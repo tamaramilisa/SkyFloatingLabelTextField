@@ -14,7 +14,6 @@ import UIKit
 /**
  A beautiful and flexible textfield implementation with support for title label, error message and placeholder.
  */
-@IBDesignable
 open class SkyFloatingLabelTextField: UITextField { // swiftlint:disable:this type_body_length
     /**
      A Boolean value that determines if the language displayed is LTR. 
@@ -48,7 +47,7 @@ open class SkyFloatingLabelTextField: UITextField { // swiftlint:disable:this ty
     fileprivate var cachedTextColor: UIColor?
 
     /// A UIColor value that determines the text color of the editable text
-    @IBInspectable
+    
     override dynamic open var textColor: UIColor? {
         set {
             cachedTextColor = newValue
@@ -60,7 +59,7 @@ open class SkyFloatingLabelTextField: UITextField { // swiftlint:disable:this ty
     }
 
     /// A UIColor value that determines text color of the placeholder label
-    @IBInspectable dynamic open var placeholderColor: UIColor = UIColor.lightGray {
+     dynamic open var placeholderColor: UIColor = UIColor.lightGray {
         didSet {
             updatePlaceholder()
         }
@@ -101,49 +100,49 @@ open class SkyFloatingLabelTextField: UITextField { // swiftlint:disable:this ty
     }
 
     /// A UIColor value that determines the text color of the title label when in the normal state
-    @IBInspectable dynamic open var titleColor: UIColor = .gray {
+     dynamic open var titleColor: UIColor = .gray {
         didSet {
             updateTitleColor()
         }
     }
 
     /// A UIColor value that determines the color of the bottom line when in the normal state
-    @IBInspectable dynamic open var lineColor: UIColor = .lightGray {
+     dynamic open var lineColor: UIColor = .lightGray {
         didSet {
             updateLineView()
         }
     }
 
     /// A UIColor value that determines the color used for the title label and line when the error message is not `nil`
-    @IBInspectable dynamic open var errorColor: UIColor = .red {
+     dynamic open var errorColor: UIColor = .red {
         didSet {
             updateColors()
         }
     }
 
     /// A UIColor value that determines the color used for the line when error message is not `nil`
-    @IBInspectable dynamic open var lineErrorColor: UIColor? {
+     dynamic open var lineErrorColor: UIColor? {
         didSet {
             updateColors()
         }
     }
     
     /// A UIColor value that determines the color used for the text when error message is not `nil`
-    @IBInspectable dynamic open var textErrorColor: UIColor? {
+     dynamic open var textErrorColor: UIColor? {
         didSet {
             updateColors()
         }
     }
     
     /// A UIColor value that determines the color used for the title label when error message is not `nil`
-    @IBInspectable dynamic open var titleErrorColor: UIColor? {
+     dynamic open var titleErrorColor: UIColor? {
         didSet {
             updateColors()
         }
     }
     
     /// A UIColor value that determines the color used for the title label and line when text field is disabled
-    @IBInspectable dynamic open var disabledColor: UIColor = UIColor(white: 0.88, alpha: 1.0) {
+     dynamic open var disabledColor: UIColor = UIColor(white: 0.88, alpha: 1.0) {
         didSet {
             updateControl()
             updatePlaceholder()
@@ -151,14 +150,14 @@ open class SkyFloatingLabelTextField: UITextField { // swiftlint:disable:this ty
     }
 
     /// A UIColor value that determines the text color of the title label when editing
-    @IBInspectable dynamic open var selectedTitleColor: UIColor = .blue {
+     dynamic open var selectedTitleColor: UIColor = .blue {
         didSet {
             updateTitleColor()
         }
     }
 
     /// A UIColor value that determines the color of the line in a selected state
-    @IBInspectable dynamic open var selectedLineColor: UIColor = .black {
+     dynamic open var selectedLineColor: UIColor = .black {
         didSet {
             updateLineView()
         }
@@ -167,7 +166,7 @@ open class SkyFloatingLabelTextField: UITextField { // swiftlint:disable:this ty
     // MARK: Line height
 
     /// A CGFloat value that determines the height for the bottom line when the control is in the normal state
-    @IBInspectable dynamic open var lineHeight: CGFloat = 0.5 {
+     dynamic open var lineHeight: CGFloat = 0.5 {
         didSet {
             updateLineView()
             setNeedsDisplay()
@@ -175,7 +174,7 @@ open class SkyFloatingLabelTextField: UITextField { // swiftlint:disable:this ty
     }
 
     /// A CGFloat value that determines the height for the bottom line when the control is in a selected state
-    @IBInspectable dynamic open var selectedLineHeight: CGFloat = 1.0 {
+     dynamic open var selectedLineHeight: CGFloat = 1.0 {
         didSet {
             updateLineView()
             setNeedsDisplay()
@@ -256,7 +255,7 @@ open class SkyFloatingLabelTextField: UITextField { // swiftlint:disable:this ty
     fileprivate var _renderingInInterfaceBuilder: Bool = false
 
     /// The text content of the textfield
-    @IBInspectable
+    
     override open var text: String? {
         didSet {
             updateControl(false)
@@ -267,7 +266,7 @@ open class SkyFloatingLabelTextField: UITextField { // swiftlint:disable:this ty
      The String to display when the input field is empty.
      The placeholder can also appear in the title label when both `title` `selectedTitle` and are `nil`.
      */
-    @IBInspectable
+    
     override open var placeholder: String? {
         didSet {
             setNeedsDisplay()
@@ -277,14 +276,14 @@ open class SkyFloatingLabelTextField: UITextField { // swiftlint:disable:this ty
     }
 
     /// The String to display when the textfield is editing and the input is not empty.
-    @IBInspectable open var selectedTitle: String? {
+     open var selectedTitle: String? {
         didSet {
             updateControl()
         }
     }
 
     /// The String to display when the textfield is not editing and the input is not empty.
-    @IBInspectable open var title: String? {
+     open var title: String? {
         didSet {
             updateControl()
         }
